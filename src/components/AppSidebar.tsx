@@ -26,6 +26,9 @@ import {
   SidebarSeparator,
   SidebarGroupAction,
   SidebarMenuBadge,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton,
 } from "./ui/sidebar";
 import {
   DropdownMenu,
@@ -164,6 +167,39 @@ const AppSidebar = () => {
             </CollapsibleContent>
           </SidebarGroup>
         </Collapsible>
+        <SidebarGroup>
+          <SidebarGroupLabel>Nested Items</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/#">
+                    <Projector />
+                    See All Projects
+                  </Link>
+                </SidebarMenuButton>
+                <SidebarMenuSub>
+                    <SidebarMenuSubItem>
+                        <SidebarMenuSubButton asChild>
+                            <Link href="/#">
+                                <Plus />
+                                Add Project
+                            </Link>
+                        </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                    <SidebarMenuSubItem>
+                        <SidebarMenuSubButton asChild>
+                            <Link href="/#">
+                                <Plus />
+                                Add Category
+                            </Link>
+                        </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                </SidebarMenuSub>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
