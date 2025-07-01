@@ -1,3 +1,5 @@
+[Tutorial](https://www.youtube.com/watch?v=SjsQdfvxjL8)
+
 [ShadCn](https://ui.shadcn.com/)
 
-[Tutorial](https://www.youtube.com/watch?v=SjsQdfvxjL8)
+[Lucide Icons](https://lucide.dev/icons/)
