@@ -1,4 +1,7 @@
+import { BadgeCheck, Candy, Citrus, Shield } from "lucide-react";
+
 import CardList from "@/components/CardList";
+import { Progress } from "@/components/ui/progress";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -12,7 +15,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { BadgeCheck, Candy, Citrus, Shield } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const SingleUserPage = () => {
   return (
@@ -96,7 +99,40 @@ const SingleUserPage = () => {
               </HoverCard>
             </div>
           </div>
-          <div className="bg-primary-foreground p-4 rounded-lg">Info</div>
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <h1 className="text-xl font-semibold">User Information</h1>
+            <div className="space-y-4 mt-4">
+              <div className="flex flex-col gap-2 mb-8">
+                <p className="text-sm text-muted-foreground">
+                  Profile Completion
+                </p>
+                <Progress value={66} />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Username:</span>
+                <span>john.doe</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Email:</span>
+                <span>john.doe@gmail.com</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Phone:</span>
+                <span>+1 234 5678</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Location:</span>
+                <span>New York, NY</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold">Role:</span>
+                <Badge>Admin</Badge>
+              </div>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Joined on 2025.01.01
+            </p>
+          </div>
           <div className="bg-primary-foreground p-4 rounded-lg">
             <CardList title="Recent Activity" />
           </div>
