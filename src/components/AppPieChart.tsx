@@ -1,5 +1,7 @@
 "use client";
+
 import { Label, Pie, PieChart } from "recharts";
+import { TrendingUp } from "lucide-react";
 
 import {
   ChartConfig,
@@ -7,8 +9,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { CardFooter } from "./ui/card";
-import { TrendingUp } from "lucide-react";
+import { CardFooter } from "@/components/ui/card";
 
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
@@ -64,37 +65,30 @@ const AppBarChart = () => {
             nameKey="browser"
             innerRadius={60}
             strokeWidth={5}
+          />
+          <text
+            x="50%"
+            y="48%"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="var(--foreground)"
+            fontSize="28"
+            fontWeight="bold"
+            className="fill-foreground"
           >
-            <Label
-              content={({ viewBox }) => {
-                if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                  return (
-                    <text
-                      x={viewBox.cx}
-                      y={viewBox.cy}
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                    >
-                      <tspan
-                        x={viewBox.cx}
-                        y={viewBox.cy}
-                        className="fill-foreground text-3xl font-bold"
-                      >
-                        {totalVisitors.toLocaleString()}
-                      </tspan>
-                      <tspan
-                        x={viewBox.cx}
-                        y={(viewBox.cy || 0) + 24}
-                        className="fill-muted-foreground"
-                      >
-                        Visitors
-                      </tspan>
-                    </text>
-                  );
-                }
-              }}
-            />
-          </Pie>
+            {totalVisitors.toLocaleString()}
+          </text>
+          <text
+            x="50%"
+            y="58%"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            fill="var(--muted-foreground)"
+            fontSize="14"
+            className="fill-muted-foreground"
+          >
+            Visitors
+          </text>
         </PieChart>
       </ChartContainer>
       <CardFooter className="flex-col gap-2 text-sm">
