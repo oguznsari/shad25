@@ -19,6 +19,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const SingleUserPage = () => {
   return (
@@ -149,7 +150,21 @@ const SingleUserPage = () => {
           </div>
         </div>
         <div className="w-full xl:w-2/3 space-y-6">
-          <div className="bg-primary-foreground p-4 rounded-lg">User Cards</div>
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-2">
+              <Avatar className="size-12">
+                <AvatarImage src="https://avatars.githubusercontent.com/u/1486366" />
+                <AvatarFallback>JD</AvatarFallback>
+              </Avatar>
+              <h1 className="text-xl font-semibold">John Doe</h1>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+              ratione alias optio quod maxime assumenda quos inventore nobis
+              dolorum expedita. Magni fugit provident est quas expedita
+              repellendus ex quidem exercitationem!
+            </p>
+          </div>
           <div className="bg-primary-foreground p-4 rounded-lg">Chart</div>
         </div>
       </div>
